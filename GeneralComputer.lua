@@ -100,7 +100,7 @@ functions = {
 				{text = "inv\n", color = "white"}, {text = "See info on inventory manager commands, if you are connected to one.\n", color = "yellow"},
 			}
 
-		elseif commands[2] == nil or commands[2] == "" or commands[2] == " "
+		elseif commands[2] == nil or commands[2] == "" or commands[2] == " " then
 
 			chatMessage = {
 				{text = "command | ", color = "white"}, {text = "required args.", color = "aqua"}, {text = " | ", color = "white"}, {text = "optional args.\n", color = "yellow"},
