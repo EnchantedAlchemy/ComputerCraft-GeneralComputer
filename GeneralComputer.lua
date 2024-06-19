@@ -30,6 +30,10 @@ functions = {
 
 		local table = det.getPlayerPos(name)
 		local user = det.getPlayerPos(commands[1])
+		print user.x
+		print user.y
+		print user.z
+		print math.sqrt((table.x - user.x)^2 + (table.y - user.y)^2 + (table.z - user.z)^2)
 
 		if table.x == nil then
 			chatFunctions.privateMessage({text = "Invalid username or player is in another dimension.", color = "red", bold = true}, commands[1])
