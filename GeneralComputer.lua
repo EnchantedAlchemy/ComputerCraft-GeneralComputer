@@ -24,14 +24,12 @@ functions = {
 
 		local name = ""
 		for i,v in pairs(det.getOnlinePlayers()) do
-			print(v)
 			if string.find(v, desiredName) then
 				if name == "" or string.len(v) < string.len(name) then
 					name = v
 				end
 			end	
 		end
-		print(name)
 
 		--No player given
 		if name == nil or name == "" then
@@ -49,7 +47,7 @@ functions = {
 
 		local distance = math.sqrt((table.x - user.x)^2 + (table.y - user.y)^2 + (table.z - user.z)^2)
 		
-		chatFunctions.privateMessage({text = commands[2] .. ": " .. table.x .. ", " .. table.y .. ", " .. table.z .. " | Distance: " .. textFunctions.round(distance) .. " Blocks", color = "white", bold = true, italic = false}, commands[1])
+		chatFunctions.privateMessage({text = name .. ": " .. table.x .. ", " .. table.y .. ", " .. table.z .. " | Distance: " .. textFunctions.round(distance) .. " Blocks", color = "white", bold = true, italic = false}, commands[1])
 
 	end
 
