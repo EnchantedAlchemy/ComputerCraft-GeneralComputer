@@ -38,7 +38,8 @@ functions = {
 		end
 		
 		chatFunctions.privateMessage({text = commands[2] .. ": " .. table.x .. ", " .. table.y .. ", " .. table.z, color = "white", bold = true}, commands[1])
-		os.sleep()
+		os.sleep(1)
+		print("hi")
 		chatFunctions.privateMessage({text = commands[2] .. ": " .. table.x .. ", " .. table.y .. ", " .. table.z, color = "white", bold = true}, commands[1])
 		chatFunctions.privateMessage({text = "Distance: " .. distance .. " Blocks", color = "white", bold = true}, commands[1])
 
