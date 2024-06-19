@@ -92,20 +92,30 @@ functions = {
 
 		local chatMessage = {}
 
-		if commands[2] ~= "general" then
+		if commands[2] == nil or commands[2] == "" or commands[2] == " " then
 
 			chatMessage = {
 				{text = "Type \"$help\" followed by one of the following terms to see more info:\n", color = "white"},
-				{text = "general\n", color = "white"}, {text = "See info on general commands.\n", color = "yellow"},
-				{text = "inv\n", color = "white"}, {text = "See info on inventory manager commands, if you are connected to one.\n", color = "yellow"},
+				{text = "general\n", color = "yellow"}, {text = "See info on general commands.\n", color = "white"},
+				{text = "inv\n", color = "yellow"}, {text = "See info on inventory manager commands.\n", color = "white"},
 			}
 
-		elseif commands[2] == nil or commands[2] == "" or commands[2] == " " then
+		elseif commands[2] == "general" then
 
 			chatMessage = {
 				{text = "command | ", color = "white"}, {text = "required args.", color = "aqua"}, {text = " | ", color = "white"}, {text = "optional args.\n", color = "yellow"},
 				{text = "$ping | ", color = "white"}, {text = "username", color = "aqua"}, {text = " | ", color = "white"}, {text = "registersCapslock\n", color = "yellow"}, {text = "Display the given player's username. Not caps sensitive unless registersCapslock is true.\n", color = "gray"},
 				{text = "$radar | ", color = "white"}, {text = "includeFaction\n", color = "yellow"}, {text = "Displays players within 300 blocks of the computer. Does not include Penumbra unless includeFaction is true.\n", color = "gray"},
+			}
+
+		elseif commands[2] == "inv" then
+
+			chatMessage = {
+				{text = "command | ", color = "white"}, {text = "required args.", color = "aqua"}, {text = " | ", color = "white"}, {text = "optional args.\n", color = "yellow"},
+				{text = "$take | ", color = "white"}, {text = "mod:item_name", color = "aqua"}, {text = " | ", color = "white"}, {text = "quantity\n", color = "yellow"}, {text = "Takes one (or given amount) of the given item if it is in storage.\n", color = "gray"},
+				{text = "$store | ", color = "white"}, {text = "quantity\n", color = "yellow"}, {text = "Puts held stack (or given amount) of items in storage.\n", color = "gray"},
+				{text = "$del | ", color = "white"}, {text = "quantity\n", color = "yellow"}, {text = "DELETES held stack (or given amount) of items.\n", color = "gray"},
+				{text = "$list\n", color = "white"}, {text = "Lists all items in storage\n", color = "gray"}
 			}
 
 		end
