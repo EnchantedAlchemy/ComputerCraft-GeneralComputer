@@ -37,7 +37,7 @@ functions = {
 			return
 		end
 		
-		chatFunctions.privateMessage({text = commands[2] .. ": " .. table.x .. ", " .. table.y .. ", " .. table.z .. " | Distance: " .. distance .. " Blocks", color = "white", bold = true}, commands[1])
+		chatFunctions.privateMessage({text = commands[2] .. ": " .. table.x .. ", " .. table.y .. ", " .. table.z .. " | Distance: " .. distance .. " Blocks", color = "white", bold = true, italic = false}, commands[1])
 
 	end
 
