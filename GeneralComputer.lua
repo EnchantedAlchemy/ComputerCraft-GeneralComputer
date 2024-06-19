@@ -1,7 +1,7 @@
 local textFunctions = require("utilities/textFunctions")
 local det = peripheral.find("playerDetector")
 local chatBox = peripheral.find("chatBox")
-local chatBoxName = "Ping"
+local chatBoxName = "General"
 
 chatFunctions = {
 
@@ -76,9 +76,9 @@ functions = {
 		end
 
 		if displayedPlayers ~= "" then
-			chatFunctions.privateMessage({text = "Players within 300 blocks:\n" .. displayedPlayers, color = "white", bold = false, italic = false}, commands[1])
+			chatFunctions.privateMessage({text = "Players within 300 blocks of detector:\n" .. displayedPlayers, color = "white", bold = false, italic = false}, commands[1])
 		else
-			chatFunctions.privateMessage({text = "No players within 300 blocks.", color = "white", bold = false, italic = false}, commands[1])
+			chatFunctions.privateMessage({text = "No players within 300 blocks of detector.", color = "white", bold = false, italic = false}, commands[1])
 		end
 		
 
