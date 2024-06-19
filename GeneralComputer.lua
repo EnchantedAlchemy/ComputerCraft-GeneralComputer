@@ -96,8 +96,8 @@ functions = {
 
 			chatMessage = {
 				{text = "Type \"$help\" followed by one of the following terms to see more info:\n", color = "white"},
-				{text = "general\n", color = "white"}, {text = "See info on general commands.\n", color = "gray"},
-				{text = "inv\n", color = "white"}, {text = "See info on inventory manager commands, if you are connected to one.\n", color = "gray"},
+				{text = "general\n", color = "white"}, {text = "See info on general commands.\n", color = "yellow"},
+				{text = "inv\n", color = "white"}, {text = "See info on inventory manager commands, if you are connected to one.\n", color = "yellow"},
 			}
 
 		elseif commands[2] == nil or commands[2] == "" or commands[2] == " "
