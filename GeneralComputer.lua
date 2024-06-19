@@ -20,7 +20,16 @@ functions = {
 
 	ping = function(commands)
 
-		local name = commands[2]
+		local desiredName = commands[2]
+
+		local name = ""
+		for i,v in pairs(det.getOnlinePlayers()) do
+			if string.find(v, desiredName) then
+				if name == "" or string.len(v) < string.len(name) then
+					name = v
+				end
+			end	
+		end
 
 		--No player given
 		if name == nil or name == "" then
