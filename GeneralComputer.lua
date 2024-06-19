@@ -60,7 +60,27 @@ functions = {
 
 		local distance = math.sqrt((table.x - user.x)^2 + (table.y - user.y)^2 + (table.z - user.z)^2)
 		
-		chatFunctions.privateMessage({text = name .. ": " .. table.x .. ", " .. table.y .. ", " .. table.z .. " | Distance: " .. textFunctions.round(distance) .. " Blocks", color = "white", bold = true, italic = false}, commands[1])
+		chatFunctions.privateMessage({text = name .. ": " .. table.x .. ", " .. table.y .. ", " .. table.z .. "\nDistance: " .. textFunctions.round(distance) .. " Blocks", color = "white", bold = true, italic = false}, commands[1])
+
+	end
+
+	radar = function(commands)
+
+		local players = det.getPlayersInRange(300)
+		local displayedPlayers = ""
+
+		for i,v in pairs(players) do
+			if v ~= "EnchantedAlchemy" and v ~= "garbloni" and v ~= "LogHammm" then
+				displayedPlayers = displayedPlayers .. v .. "\n"
+			end
+		end
+
+		if displayedPlayers ~= "" then
+			chatFunctions.privateMessage({text = "Players within 300 blocks:\n" .. displayedPlayers, color = "white", bold = false, italic = false}, commands[1])
+		else
+			chatFunctions.privateMessage({text = "No players within 300 blocks.", color = "white", bold = false, italic = false}, commands[1])
+		end
+		
 
 	end
 
