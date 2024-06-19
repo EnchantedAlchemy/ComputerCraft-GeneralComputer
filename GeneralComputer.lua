@@ -21,6 +21,9 @@ functions = {
 	ping = function(commands)
 
 		local desiredName = commands[2]
+		local registerCaps = commands[3]
+
+		if registerCaps == nil or string.lower(ignoreCaps) ~= "true" then ignoreCaps = "false" end
 
 		--No player given
 		if desiredName == nil or desiredName == "" then
@@ -29,7 +32,16 @@ functions = {
 		end
 
 		local name = ""
-		for i,v in pairs(det.getOnlinePlayers()) do
+		local players = det.getOnlinePlayers()
+
+		if registerCaps == "false" then
+			for i,v in pairs(players) do
+				players[i] = string.lower(v)
+			end
+			desiredName = string.lower(desiredName)
+		end
+
+		for i,v in pairs(players) do
 			if string.find(v, desiredName) then
 				if name == "" or string.len(v) < string.len(name) then
 					name = v
