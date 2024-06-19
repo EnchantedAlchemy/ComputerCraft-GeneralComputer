@@ -74,7 +74,7 @@ functions = {
 		local displayedPlayers = ""
 
 		for i,v in pairs(players) do
-			if commands[2] == "true" or (v ~= "EnchantedAlchemy" and v ~= "garbloni" and v ~= "LogHammm") then
+			if commands[2] == "true" or (v ~= "EnchantedAlchemy" and v ~= "garbloni" and v ~= "LogHammm" and v ~= "ToomtHunger") then
 				displayedPlayers = displayedPlayers .. v .. "\n"
 			end
 		end
@@ -130,7 +130,7 @@ functions = {
 while true do
 
 	local event, user, message, uuid, isHidden = os.pullEvent("chat")
-	if isHidden and user == "EnchantedAlchemy" or user == "garbloni" or user == "LogHammm" then
+	if isHidden and user == "EnchantedAlchemy" or user == "garbloni" or user == "LogHammm" or user == "ToomtHunger" then
 
 		local commands = {}
 		
