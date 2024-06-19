@@ -62,7 +62,7 @@ functions = {
 		
 		chatFunctions.privateMessage({text = name .. ": " .. table.x .. ", " .. table.y .. ", " .. table.z .. "\nDistance: " .. textFunctions.round(distance) .. " Blocks", color = "white", bold = true, italic = false}, commands[1])
 
-	end
+	end,
 
 	radar = function(commands)
 
