@@ -70,7 +70,7 @@ functions = {
 		local displayedPlayers = ""
 
 		for i,v in pairs(players) do
-			if v ~= "EnchantedAlchemy" and v ~= "garbloni" and v ~= "LogHammm" then
+			if commands[1] ~= "true" and (v ~= "EnchantedAlchemy" and v ~= "garbloni" and v ~= "LogHammm") then
 				displayedPlayers = displayedPlayers .. v .. "\n"
 			end
 		end
