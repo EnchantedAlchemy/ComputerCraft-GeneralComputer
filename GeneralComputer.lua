@@ -31,7 +31,7 @@ functions = {
 		local name = ""
 		for i,v in pairs(det.getOnlinePlayers()) do
 			if string.find(v, desiredName) then
-				if string.len(v) < string.len(name) then
+				if name == "" or string.len(v) < string.len(name) then
 					name = v
 				end
 			end	
