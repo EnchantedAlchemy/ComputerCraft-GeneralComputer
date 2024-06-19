@@ -110,10 +110,10 @@ functions = {
 
 		end
 
-	end
+		chatMessage = textutils.serializeJSON(chatMessage)
+		chatBox.sendFormattedMessageToPlayer(chatMessage, commands[1], chatBoxName)
 
-	chatMessage = textutils.serializeJSON(chatMessage)
-	chatBox.sendFormattedMessageToPlayer(chatMessage, commands[1], chatBoxName)
+	end
 
 }
 
