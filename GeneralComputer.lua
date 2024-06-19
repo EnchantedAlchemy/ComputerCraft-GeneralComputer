@@ -35,14 +35,15 @@ functions = {
 		local players = det.getOnlinePlayers()
 
 		if registerCaps == "false" then
-			for i,v in pairs(players) do
-				players[i] = string.lower(v)
-			end
 			desiredName = string.lower(desiredName)
 		end
 
 		for i,v in pairs(players) do
-			if string.find(v, desiredName) then
+			local compareName = v
+			if registerCaps == "false" then 
+				compareName = string.lower(v) 
+			end
+			if string.find(compareName, desiredName) then
 				if name == "" or string.len(v) < string.len(name) then
 					name = v
 				end
