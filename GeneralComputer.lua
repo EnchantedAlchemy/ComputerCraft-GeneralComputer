@@ -86,7 +86,34 @@ functions = {
 		end
 		
 
+	end,
+
+	help = function(commands)
+
+		local chatMessage = {}
+
+		if commands[2] ~= "general" then
+
+			chatMessage = {
+				{text = "Type \"$help\" followed by one of the following terms to see more info:\n", color = "white"},
+				{text = "general", color = "white"}, {text = "See info on general commands.\n", color = "gray"},
+				{text = "inv", color = "white"}, {text = "See info on inventory manager commands.\n", color = "gray"},
+			}
+
+		else
+
+			chatMessage = {
+				{text = "command | ", color = "white"}, {text = "required args.", color = "aqua"}, {text = " | ", color = "white"}, {text = "optional args.\n", color = "yellow"},
+				{text = "$ping | ", color = "white"}, {text = "username", color = "aqua"}, {text = " | ", color = "white"}, {text = "registersCapslock\n", color = "yellow"}, {text = "Display the given player's username. Not caps sensitive unless registersCapslock is true.\n", color = "gray"},
+				{text = "$radar | ", color = "white"}, {text = "includeFaction\n", color = "yellow"}, {text = "Displays players within 300 blocks of the computer. Does not include Penumbra unless includeFaction is true.\n", color = "gray"},
+			}
+
+		end
+
 	end
+
+	chatMessage = textutils.serializeJSON(chatMessage)
+	chatBox.sendFormattedMessageToPlayer(chatMessage, commands[1], chatBoxName)
 
 }
 
