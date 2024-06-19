@@ -23,7 +23,7 @@ functions = {
 		local desiredName = commands[2]
 		local registerCaps = commands[3]
 
-		if registerCaps == nil or string.lower(ignoreCaps) ~= "true" then ignoreCaps = "false" end
+		if registerCaps == nil or string.lower(registerCaps) ~= "true" then registerCaps = "false" end
 
 		--No player given
 		if desiredName == nil or desiredName == "" then
