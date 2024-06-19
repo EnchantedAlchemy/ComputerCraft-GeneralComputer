@@ -96,8 +96,8 @@ functions = {
 
 			chatMessage = {
 				{text = "Type \"$help\" followed by one of the following terms to see more info:\n", color = "white"},
-				{text = "general\n", color = "yellow"}, {text = "See info on general commands.\n", color = "grey"},
-				{text = "inv\n", color = "yellow"}, {text = "See info on inventory manager commands.\n", color = "grey"},
+				{text = "general\n", color = "yellow"}, {text = "See info on general commands.\n", color = "gray"},
+				{text = "inv\n", color = "yellow"}, {text = "See info on inventory manager commands.\n", color = "gray"},
 			}
 
 		elseif commands[2] == "general" then
