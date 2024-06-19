@@ -1,3 +1,7 @@
+--Requires:
+--Chatbox
+--Player Detector
+
 local textFunctions = require("utilities/textFunctions")
 local det = peripheral.find("playerDetector")
 local chatBox = peripheral.find("chatBox")
