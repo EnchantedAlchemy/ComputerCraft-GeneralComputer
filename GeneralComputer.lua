@@ -22,19 +22,19 @@ functions = {
 
 		local desiredName = commands[2]
 
+		--No player given
+		if desiredName == nil or desiredName == "" then
+			chatFunctions.privateMessage({text = "Enter an player username.", color = "red", bold = true}, commands[1])
+			return
+		end
+
 		local name = ""
 		for i,v in pairs(det.getOnlinePlayers()) do
 			if string.find(v, desiredName) then
-				if name == "" or string.len(v) < string.len(name) then
+				if string.len(v) < string.len(name) then
 					name = v
 				end
 			end	
-		end
-
-		--No player given
-		if name == nil or name == "" then
-			chatFunctions.privateMessage({text = "Enter an player username.", color = "red", bold = true}, commands[1])
-			return
 		end
 
 		local table = det.getPlayerPos(name)
