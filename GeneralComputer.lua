@@ -30,12 +30,13 @@ functions = {
 
 		local table = det.getPlayerPos(name)
 		local user = det.getPlayerPos(commands[1])
-		local distance = math.sqrt((table.x - user.x)^2 + (table.y - user.y)^2 + (table.z - user.z)^2)
 
 		if table.x == nil then
 			chatFunctions.privateMessage({text = "Invalid username or player is in another dimension.", color = "red", bold = true}, commands[1])
 			return
 		end
+
+		local distance = math.sqrt((table.x - user.x)^2 + (table.y - user.y)^2 + (table.z - user.z)^2)
 		
 		chatFunctions.privateMessage({text = commands[2] .. ": " .. table.x .. ", " .. table.y .. ", " .. table.z .. " | Distance: " .. textFunctions.round(distance) .. " Blocks", color = "white", bold = true, italic = false}, commands[1])
 
