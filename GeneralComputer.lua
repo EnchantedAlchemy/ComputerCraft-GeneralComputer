@@ -30,6 +30,7 @@ functions = {
 				end
 			end	
 		end
+		print(name)
 
 		--No player given
 		if name == nil or name == "" then
