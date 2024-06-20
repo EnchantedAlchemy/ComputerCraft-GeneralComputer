@@ -114,7 +114,7 @@ functions = {
 
 						print(v)
 
-						chatMessage[#chatMessage + 1] = {text = v..": "..otherInfo.x..", "..otherInfo.y..", "..otherInfo.z.." | Distance: "..distance, color = "white", bold = false, italic = false}
+						chatMessage[#chatMessage + 1] = {text = v..": "..otherInfo.x..", "..otherInfo.y..", "..otherInfo.z.." | Distance: "..textFunctions.round(distance), color = "white", bold = false, italic = false}
 
 					end
 
@@ -122,7 +122,7 @@ functions = {
 
 			end
 		end
-		
+
 		if numNearby > 0 then
 			table.insert(chatMessage, 2, {text = "Players within 300 blocks of you:\n", color = "white", italic = false})
 		else
