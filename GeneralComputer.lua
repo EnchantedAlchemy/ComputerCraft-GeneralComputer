@@ -112,7 +112,8 @@ functions = {
 
 						numNearby = numNearby + 1
 
-						chatMessage[#chatMessage + 1] = {text = v..": "..otherInfo.x..", "..otherInfo.y..", "..otherInfo.z.." | Distance: "..textFunctions.round(distance), color = "white", bold = false, italic = false}
+						chatMessage[#chatMessage + 1] = {text = v..": ", color = "white", bold = true, italic = false}
+						chatMessage[#chatMessage + 1] = {text = otherInfo.x..", "..otherInfo.y..", "..otherInfo.z.." | Distance: "..textFunctions.round(distance), color = "white", bold = false, italic = false}
 
 					end
 
