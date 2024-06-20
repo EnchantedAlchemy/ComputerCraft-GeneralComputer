@@ -91,14 +91,7 @@ functions = {
 	announce = function(commands)
 
 		local chatMessage = {
-			{text = "\n"..commands[2].."\n", color = "light_purple", bold = true, italic = false},
-			{text = commands[2].."\n", color = "light_purple", bold = false, italic = false},
-			{text = commands[2].."\n", color = "light_purple", bold = false, italic = true},
-			{text = commands[2].."\n", color = "light_purple", bold = true, italic = true},
-			{text = commands[2].."\n", color = "dark_purple", bold = true, italic = false},
-			{text = commands[2].."\n", color = "dark_purple", bold = false, italic = false},
-			{text = commands[2].."\n", color = "dark_purple", bold = false, italic = true},
-			{text = commands[2].."\n", color = "dark_purple", bold = true, italic = true}
+			{text = commands[2], color = "light_purple", bold = true, italic = false}
 		}
 		chatMessage = textutils.serializeJSON(chatMessage)
 		chatBox.sendFormattedMessage(chatMessage, "Penumbra Research Team", "[]", "")
@@ -123,6 +116,7 @@ functions = {
 				{text = "command | ", color = "white"}, {text = "required args.", color = "aqua"}, {text = " | ", color = "white"}, {text = "optional args.\n", color = "yellow"},
 				{text = "$ping | ", color = "white"}, {text = "username", color = "aqua"}, {text = " | ", color = "white"}, {text = "registersCapslock\n", color = "yellow"}, {text = "Display the given player's username. Not caps sensitive unless registersCapslock is true.\n", color = "gray"},
 				{text = "$radar | ", color = "white"}, {text = "includeFaction\n", color = "yellow"}, {text = "Displays players within 300 blocks of the computer. Does not include Penumbra unless includeFaction is true.\n", color = "gray"},
+				{text = "$announce | ", color = "white"}, {text = "text\n", color = "aqua"}, {text = "Announce a message as the Penumbra Rearch Team.\n", color = "gray"},
 			}
 
 		elseif commands[2] == "inv" then
