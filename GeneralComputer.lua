@@ -100,6 +100,8 @@ functions = {
 			{text = "(Private) ", color = "gray", italic = true}
 		}
 
+		local color = ""
+
 		for i,v in pairs(det.getOnlinePlayers()) do
 			if v ~= player then
 
@@ -111,6 +113,12 @@ functions = {
 					if distance <= testRange then
 
 						numNearby = numNearby + 1
+
+						if numNearby % 2 == 0 then
+							color = "white"
+						else
+							color = "aqua"
+						end
 
 						chatMessage[#chatMessage + 1] = {text = v..": ", color = "white", bold = true, italic = false}
 						chatMessage[#chatMessage + 1] = {text = otherInfo.x..", "..otherInfo.y..", "..otherInfo.z.." | Distance: "..textFunctions.round(distance), color = "white", bold = false, italic = false}
