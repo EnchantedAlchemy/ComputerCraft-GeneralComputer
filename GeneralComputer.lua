@@ -98,10 +98,10 @@ functions = {
 		end
 
 		local chatMessage = {
-			{text = textString, color = "white", bold = false, italic = false}
+			{text = textString, color = "dark_purple", bold = true, italic = false}
 		}
 		chatMessage = textutils.serializeJSON(chatMessage)
-		chatBox.sendFormattedMessage(chatMessage, "EnchantedAlchemy", "<>", "")
+		chatBox.sendFormattedMessage(chatMessage, "Penumbra Research Team", "[]", "")
 
 	end,
 
