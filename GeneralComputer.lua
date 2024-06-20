@@ -115,7 +115,7 @@ functions = {
 						numNearby = numNearby + 1
 
 						if numNearby % 2 == 0 then
-							nameColor = "yellow"
+							nameColor = "gold"
 						else
 							nameColor = "aqua"
 						end
