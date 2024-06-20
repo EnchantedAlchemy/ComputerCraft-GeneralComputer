@@ -91,7 +91,7 @@ functions = {
 	announce = function(commands)
 
 		local chatMessage = {
-			{text = commands[2], color = "light_purple", bold = true, italic = false}
+			{text = commands[2], color = "dark_purple", bold = true, italic = false}
 		}
 		chatMessage = textutils.serializeJSON(chatMessage)
 		chatBox.sendFormattedMessage(chatMessage, "Penumbra Research Team", "[]", "")
