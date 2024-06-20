@@ -99,7 +99,7 @@ functions = {
 			{text = "(Private) Players within 300 blocks:\n", color = "gray", italic = true},
 		}
 
-		for i,v in det.getOnlinePlayers() do
+		for i,v in pairs(det.getOnlinePlayers()) do
 			if v ~= player then
 
 				local otherInfo = det.getPlayerPos(v)
