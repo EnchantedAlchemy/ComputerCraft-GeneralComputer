@@ -100,18 +100,13 @@ functions = {
 			{text = "(Private) ", color = "gray", italic = true}
 		}
 
-		print("start loop")
-
 		for i,v in pairs(det.getOnlinePlayers()) do
 			if v ~= player then
-
-				print(v)
 
 				local otherInfo = det.getPlayerPos(v)
 				if otherInfo.x ~= nil then  --insure players in other dimensions won't be counted
 
 					local distance = math.sqrt((otherInfo.x - playerInfo.x)^2 + (otherInfo.y - playerInfo.y)^2 + (otherInfo.z - playerInfo.z)^2)
-					print(distance)
 
 					if distance <= testRange then
 
@@ -133,7 +128,6 @@ functions = {
 		end
 		
 
-		print("message sending")
 		chatMessage = textutils.serializeJSON(chatMessage)
 		chatBox.sendFormattedMessageToPlayer(chatMessage, player, chatBoxName)
 
