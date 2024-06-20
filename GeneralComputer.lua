@@ -115,13 +115,13 @@ functions = {
 						numNearby = numNearby + 1
 
 						if numNearby % 2 == 0 then
-							nameColor = "yellow"
+							nameColor = "red"
 						else
 							nameColor = "aqua"
 						end
 
 						chatMessage[#chatMessage + 1] = {text = v..": ", color = nameColor, bold = true, italic = false}
-						chatMessage[#chatMessage + 1] = {text = otherInfo.x..", "..otherInfo.y..", "..otherInfo.z.." | Distance: "..textFunctions.round(distance), color = "white", bold = false, italic = false}
+						chatMessage[#chatMessage + 1] = {text = otherInfo.x..", "..otherInfo.y..", "..otherInfo.z.." | Distance: "..textFunctions.round(distance).."\n", color = "white", bold = false, italic = false}
 
 					end
 
