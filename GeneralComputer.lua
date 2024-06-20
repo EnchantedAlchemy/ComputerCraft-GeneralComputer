@@ -93,7 +93,7 @@ functions = {
 		local text = commands
 		table.remove(text, 1)
 		local textString = ""
-		for i,v in text do
+		for i,v in pairs(text) do
 			textString = textString .. v .. " "
 		end
 
