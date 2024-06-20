@@ -123,6 +123,8 @@ functions = {
 			end
 		end
 
+		print(#chatMessage)
+
 		if numNearby > 0 then
 			chatMessage[2] = {text = "Players within 300 blocks of you:\n", color = "white", italic = false}
 		else
