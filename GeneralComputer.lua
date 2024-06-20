@@ -112,6 +112,8 @@ functions = {
 
 						numNearby = numNearby + 1
 
+						print(v)
+
 						table.insert(chatMessage, {text = v..": "..otherInfo.x..", "..otherInfo.y..", "..otherInfo.z.." | Distance: "..distance})
 
 					end
