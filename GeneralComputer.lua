@@ -88,6 +88,39 @@ functions = {
 
 	end,
 
+	nearby = function(commands)
+
+		local testRange = 300
+
+		local player = commands[1]
+		local playerInfo = det.getPlayerPos(player)
+
+		local chatMessage = {
+			{text = "(Private) Players within 300 blocks:\n", color = "gray", italic = true},
+		}
+
+		for i,v in det.getOnlinePlayers() do
+			if v ~= player then
+
+				local otherInfo = det.getPlayerPos(v)
+				if otherInfo.x == nil then return end --insure players in other dimensions won't be counted
+
+				local distance = math.sqrt((otherInfo.x - playerInfo.x)^2 + (otherInfo.y - playerInfo.y)^2 + (otherInfo.z - playerInfo.z)^2)
+
+				if distance <= testRange then
+
+					table.insert(chatMessage, {text = v..": "..otherInfo.x..", "..otherInfo.y..", "..otherInfo.z.." | Distance: "..distance})
+
+				end
+
+			end
+		end
+
+		chatMessage = textutils.serializeJSON(chatMessage)
+		chatBox.sendFormattedMessageToPlayer(chatMessage, player, chatBoxName)
+
+	end,
+
 	announce = function(commands)
 
 		local text = commands
