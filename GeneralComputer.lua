@@ -91,12 +91,13 @@ functions = {
 	nearby = function(commands)
 
 		local testRange = 300
+		local numNearby = 0
 
 		local player = commands[1]
 		local playerInfo = det.getPlayerPos(player)
 
 		local chatMessage = {
-			{text = "(Private) Players within 300 blocks:\n", color = "gray", italic = true},
+			{text = "(Private) ", color = "gray", italic = true}
 		}
 
 		print("start loop")
@@ -114,7 +115,8 @@ functions = {
 
 					if distance <= testRange then
 
-						print("added to message")
+						numNearby += 1
+
 						table.insert(chatMessage, {text = v..": "..otherInfo.x..", "..otherInfo.y..", "..otherInfo.z.." | Distance: "..distance})
 
 					end
@@ -123,6 +125,13 @@ functions = {
 
 			end
 		end
+
+		if numNearby > 0 then
+			chatMessage[2] = {text = "Players within 300 blocks of you:\n", color = "white", italic = false}
+		else
+			chatMessage[2] = {text = "No players within 300 blocks of you.", color = "white", italic = false}
+		end
+		
 
 		print("message sending")
 		chatMessage = textutils.serializeJSON(chatMessage)
