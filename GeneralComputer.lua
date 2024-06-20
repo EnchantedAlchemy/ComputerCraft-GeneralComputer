@@ -91,10 +91,10 @@ functions = {
 	announce = function(commands)
 
 		local chatMessage = {
-			{text = commands[2], color = "white", bold = true},
+			{text = commands[2], color = "purple", bold = true},
 		}
 		chatMessage = textutils.serializeJSON(chatMessage)
-		chatBox.sendFormattedMessage(chatMessage, "Penumbra Research Team", "[]", "&5")
+		chatBox.sendFormattedMessage(chatMessage, "Penumbra Research Team", "[]", "")
 
 	end,
 
