@@ -114,7 +114,7 @@ functions = {
 
 						print(v)
 
-						table.insert(chatMessage, {text = v..": "..otherInfo.x..", "..otherInfo.y..", "..otherInfo.z.." | Distance: "..distance})
+						chatMessage[#chatMessage + 1] = {text = v..": "..otherInfo.x..", "..otherInfo.y..", "..otherInfo.z.." | Distance: "..distance, color = "white", bold = false, italic = false}
 
 					end
 
