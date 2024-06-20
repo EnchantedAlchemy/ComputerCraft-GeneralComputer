@@ -110,7 +110,7 @@ functions = {
 
 					if distance <= testRange then
 
-						numNearby += 1
+						numNearby = numNearby + 1
 
 						table.insert(chatMessage, {text = v..": "..otherInfo.x..", "..otherInfo.y..", "..otherInfo.z.." | Distance: "..distance})
 
