@@ -107,15 +107,17 @@ functions = {
 				print(v)
 
 				local otherInfo = det.getPlayerPos(v)
-				if otherInfo.x == nil then return end --insure players in other dimensions won't be counted
+				if otherInfo.x ~= nil then  --insure players in other dimensions won't be counted
 
-				local distance = math.sqrt((otherInfo.x - playerInfo.x)^2 + (otherInfo.y - playerInfo.y)^2 + (otherInfo.z - playerInfo.z)^2)
-				print(distance)
+					local distance = math.sqrt((otherInfo.x - playerInfo.x)^2 + (otherInfo.y - playerInfo.y)^2 + (otherInfo.z - playerInfo.z)^2)
+					print(distance)
 
-				if distance <= testRange then
+					if distance <= testRange then
 
-					print("added to message")
-					table.insert(chatMessage, {text = v..": "..otherInfo.x..", "..otherInfo.y..", "..otherInfo.z.." | Distance: "..distance})
+						print("added to message")
+						table.insert(chatMessage, {text = v..": "..otherInfo.x..", "..otherInfo.y..", "..otherInfo.z.." | Distance: "..distance})
+
+					end
 
 				end
 
