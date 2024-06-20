@@ -90,11 +90,18 @@ functions = {
 
 	announce = function(commands)
 
+		local text = commands
+		table.remove(text, 1)
+		local textString = ""
+		for i,v in text do
+			textString = textString .. v .. " "
+		end
+
 		local chatMessage = {
-			{text = commands[2], color = "dark_purple", bold = true, italic = false}
+			{text = textString, color = "white", bold = false, italic = false}
 		}
 		chatMessage = textutils.serializeJSON(chatMessage)
-		chatBox.sendFormattedMessage(chatMessage, "Penumbra Research Team", "[]", "")
+		chatBox.sendFormattedMessage(chatMessage, "EnchantedAlchemy", "<>", "")
 
 	end,
 
