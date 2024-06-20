@@ -152,7 +152,7 @@ while true do
 
 		local commands = {}
 		
-		for s in string.gmatch(message, "[%w:_]+") do
+		for s in string.gmatch(message, "[%w%p:_]+") do
 			commands[#commands+1] = s
 		end
 		
