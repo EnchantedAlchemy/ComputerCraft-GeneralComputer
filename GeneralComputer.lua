@@ -91,7 +91,14 @@ functions = {
 	announce = function(commands)
 
 		local chatMessage = {
-			{text = commands[2], color = "light_purple", bold = true},
+			{text = commands[2], color = "\nlight_purple\n", bold = true, italic = false},
+			{text = commands[2], color = "light_purple\n", bold = false, italic = false},
+			{text = commands[2], color = "light_purple\n", bold = false, italic = true},
+			{text = commands[2], color = "light_purple\n", bold = true, italic = true},
+			{text = commands[2], color = "dark_purple\n", bold = true, italic = false},
+			{text = commands[2], color = "dark_purple\n", bold = false, italic = false},
+			{text = commands[2], color = "dark_purple\n", bold = false, italic = true},
+			{text = commands[2], color = "dark_purple\n", bold = true, italic = true},
 		}
 		chatMessage = textutils.serializeJSON(chatMessage)
 		chatBox.sendFormattedMessage(chatMessage, "Penumbra Research Team", "[]", "")
