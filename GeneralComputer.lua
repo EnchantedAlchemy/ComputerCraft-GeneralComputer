@@ -122,15 +122,12 @@ functions = {
 
 			end
 		end
-
-		print(#chatMessage)
-
-		if numNearby > 0 then
-			chatMessage[2] = {text = "Players within 300 blocks of you:\n", color = "white", italic = false}
-		else
-			chatMessage[2] = {text = "No players within 300 blocks of you.", color = "white", italic = false}
-		end
 		
+		if numNearby > 0 then
+			table.insert(chatMessage, 2, {text = "Players within 300 blocks of you:\n", color = "white", italic = false})
+		else
+			table.insert(chatMessage, 2, {text = "No players within 300 blocks of you.", color = "white", italic = false})
+		end
 
 		chatMessage = textutils.serializeJSON(chatMessage)
 		chatBox.sendFormattedMessageToPlayer(chatMessage, player, chatBoxName)
