@@ -88,6 +88,16 @@ functions = {
 
 	end,
 
+	announce = function(commands)
+
+		local chatMessage = {
+			{text = commands[2], color = "white", bold = true},
+		}
+		chatMessage = textutils.serializeJSON(chatMessage)
+		chatBox.sendFormattedMessage(chatMessage, "Penumbra Research Team", "[]", "&5")
+
+	end,
+
 	help = function(commands)
 
 		local chatMessage = {}
