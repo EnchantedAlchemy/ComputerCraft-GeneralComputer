@@ -99,16 +99,22 @@ functions = {
 			{text = "(Private) Players within 300 blocks:\n", color = "gray", italic = true},
 		}
 
+		print("start loop")
+
 		for i,v in pairs(det.getOnlinePlayers()) do
 			if v ~= player then
+
+				print(v)
 
 				local otherInfo = det.getPlayerPos(v)
 				if otherInfo.x == nil then return end --insure players in other dimensions won't be counted
 
 				local distance = math.sqrt((otherInfo.x - playerInfo.x)^2 + (otherInfo.y - playerInfo.y)^2 + (otherInfo.z - playerInfo.z)^2)
+				print(distance)
 
 				if distance <= testRange then
 
+					print("added to message")
 					table.insert(chatMessage, {text = v..": "..otherInfo.x..", "..otherInfo.y..", "..otherInfo.z.." | Distance: "..distance})
 
 				end
@@ -116,6 +122,7 @@ functions = {
 			end
 		end
 
+		print("message sending")
 		chatMessage = textutils.serializeJSON(chatMessage)
 		chatBox.sendFormattedMessageToPlayer(chatMessage, player, chatBoxName)
 
