@@ -40,7 +40,7 @@ functions = {
 
 		local sides = {
 
-			EnchantedAlchemy = "front",
+			EnchantedAlchemy = "foward",
 			LogHammm = "back",
 			garbloni = "right",
 			ToomtHunger = "left"
@@ -216,6 +216,7 @@ functions = {
 
 			chatMessage = {
 				{text = "command | ", color = "white"}, {text = "required args.", color = "aqua"}, {text = " | ", color = "white"}, {text = "optional args.\n", color = "yellow"},
+				{text = "$warp | ", color = "white"}, {text = "location\n", color = "aqua"}, {text = "Display the given player's username. Not caps sensitive unless registersCapslock is true.\n", color = "gray"},
 				{text = "$ping | ", color = "white"}, {text = "username", color = "aqua"}, {text = " | ", color = "white"}, {text = "registersCapslock\n", color = "yellow"}, {text = "Display the given player's username. Not caps sensitive unless registersCapslock is true.\n", color = "gray"},
 				{text = "$radar | ", color = "white"}, {text = "includeFaction\n", color = "yellow"}, {text = "Displays players within 300 blocks of the computer. Does not include Penumbra unless includeFaction is true.\n", color = "gray"},
 				{text = "$nearby\n", color = "white"}, {text = "Lists all players within 300 blocks of you.\n", color = "gray"},
