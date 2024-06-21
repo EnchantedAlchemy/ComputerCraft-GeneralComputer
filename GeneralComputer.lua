@@ -24,6 +24,15 @@ functions = {
 
 	warp = function(commands)
 
+		local player = commands[1]
+
+		if peripheral.find("modem") == nil then
+			chatFunctions.privateMessage({text = "No modem on central computer.", color = "red", bold = true}, player)
+			return
+		else
+			peripheral.find("modem", rednet.open())
+		end
+
 		local sides = {
 
 			EnchantedAlchemy = "foward",
@@ -33,10 +42,19 @@ functions = {
 
 		}
 
-		local player = commands[1]
 		local playerSide = sides[player]
 
-		print(playerSide)
+		local desiredWarp = string.lower(commands[2])
+
+		local warpComputer = rednet.lookup("warp_zone", desiredWarp)
+
+		if warpComputer then
+			rednet.send(warpComputer, playerSide, "warp_central")
+		else
+			chatFunctions.privateMessage({text = "Warp zone not found.", color = "red", bold = true}, player)
+		end
+
+		rednet.close()
 
 	end,
 
