@@ -22,6 +22,24 @@ chatFunctions = {
 
 functions = {
 
+	warp = function(commands)
+
+		local sides = {
+
+			"EnchantedAlchemy" = "foward",
+			"LogHammm" = "back",
+			"garbloni" = "right",
+			"ToomtHunger" = "left"
+
+		}
+
+		local player = commands[1]
+		local playerSide = sides[player]
+
+		print(playerSide)
+
+	end,
+
 	ping = function(commands)
 
 		local desiredName = commands[2]
