@@ -30,7 +30,7 @@ functions = {
 			chatFunctions.privateMessage({text = "No modem on central computer.", color = "red", bold = true}, player)
 			return
 		else
-			peripheral.find("modem", rednet.open())
+			peripheral.find("modem", rednet.open)
 		end
 
 		local sides = {
