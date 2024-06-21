@@ -40,7 +40,7 @@ functions = {
 
 		local sides = {
 
-			EnchantedAlchemy = "foward",
+			EnchantedAlchemy = "front",
 			LogHammm = "back",
 			garbloni = "right",
 			ToomtHunger = "left"
