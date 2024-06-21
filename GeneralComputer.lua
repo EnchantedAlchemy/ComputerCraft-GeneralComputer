@@ -42,8 +42,8 @@ functions = {
 
 			EnchantedAlchemy = "front",
 			LogHammm = "back",
-			garbloni = "right",
-			ToomtHunger = "left"
+			garbloni = "left",
+			ToomtHunger = "right"
 
 		}
 
