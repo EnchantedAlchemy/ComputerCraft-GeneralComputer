@@ -26,10 +26,10 @@ functions = {
 
 		local sides = {
 
-			"EnchantedAlchemy" = "foward",
-			"LogHammm" = "back",
-			"garbloni" = "right",
-			"ToomtHunger" = "left"
+			EnchantedAlchemy = "foward",
+			LogHammm = "back",
+			garbloni = "right",
+			ToomtHunger = "left"
 
 		}
 
