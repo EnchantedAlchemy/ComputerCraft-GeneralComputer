@@ -26,6 +26,11 @@ functions = {
 
 		local player = commands[1]
 
+		if commands[2] == nil or commands[2] == "" then
+			chatFunctions.privateMessage({text = "Enter a warp zone.", color = "red", bold = true}, player)
+			return
+		end
+
 		if peripheral.find("modem") == nil then
 			chatFunctions.privateMessage({text = "No modem on central computer.", color = "red", bold = true}, player)
 			return
