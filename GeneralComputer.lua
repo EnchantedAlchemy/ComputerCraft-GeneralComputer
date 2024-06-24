@@ -281,7 +281,7 @@ while true do
 			functions[mainCommand](commands)
 		end
 
-	elseif is isHidden and helldivers.user ~= nil then
+	elseif isHidden and helldivers.user ~= nil then
 		
 		local commands = {}
 		
