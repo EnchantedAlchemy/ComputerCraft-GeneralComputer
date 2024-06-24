@@ -27,7 +27,6 @@ functions = {
 	warp = function(commands)
 
 		local player = commands[1]
-		local 
 
 		if commands[2] == nil or commands[2] == "" then
 			chatFunctions.privateMessage({text = "Enter a warp zone.", color = "red", bold = true}, player)
