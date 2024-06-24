@@ -6,8 +6,8 @@ local textFunctions = require("utilities/textFunctions")
 local det = peripheral.find("playerDetector")
 local chatBox = peripheral.find("chatBox")
 local chatBoxName = "General"
-local penumbra = {"EnchantedAlchemy", "garbloni", "LogHammm", "ToomtHunger"}
-local helldivers = {"KAZOO32323", "xGreex", "comandrmario", "CaribbeanP", "Wolfchykofth501"}
+local penumbra = {EnchantedAlchemy = "front", garbloni = "left", LogHammm = "back", ToomtHunger = "right"}
+local helldivers = {KAZOO32323 = "right", xGreex = "left", comandrmario = "back", CaribbeanP = "front", Wolfchykofth501 = "left"}
 
 chatFunctions = {
 
@@ -27,6 +27,8 @@ functions = {
 	warp = function(commands)
 
 		local player = commands[1]
+		local diver = false
+		if helldivers[player] ~= nil then diver = true end
 
 		if commands[2] == nil or commands[2] == "" then
 			chatFunctions.privateMessage({text = "Enter a warp zone.", color = "red", bold = true}, player)
@@ -40,36 +42,20 @@ functions = {
 			peripheral.find("modem", rednet.open)
 		end
 
-		local sides = {
-
-			EnchantedAlchemy = "front",
-			LogHammm = "back",
-			garbloni = "left",
-			ToomtHunger = "right"
-
-		}
-		if helldivers.player ~= nil then
-
-			sides = {
-
-				CaribbeanP = "front",
-				comandrmario = "back",
-				KAZOO32323 = "left",
-				xGreex = "right"
-	
-			}
-
+		local playerSide
+		if diver == false then
+			playerSide = penumbra[player]
+		else
+			playerSide = helldivers[player]
 		end
-
-		local playerSide = sides[player]
 
 		local desiredWarp = string.lower(commands[2])
 
 		local warpComputer
-		if helldivers.player ~= nil then
-			warpComputer = rednet.lookup("warp_zone_helldivers", desiredWarp)
-		else
+		if diver == false then
 			warpComputer = rednet.lookup("warp_zone", desiredWarp)
+		else
+			warpComputer = rednet.lookup("warp_zone_helldivers", desiredWarp)
 		end
 
 		if warpComputer then
@@ -281,7 +267,7 @@ while true do
 			functions[mainCommand](commands)
 		end
 
-	elseif isHidden and helldivers.user ~= nil then
+	elseif isHidden and helldivers[user] ~= nil then
 		
 		local commands = {}
 		
