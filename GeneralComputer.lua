@@ -6,6 +6,8 @@ local textFunctions = require("utilities/textFunctions")
 local det = peripheral.find("playerDetector")
 local chatBox = peripheral.find("chatBox")
 local chatBoxName = "General"
+local penumbra = {"EnchantedAlchemy", "garbloni", "LogHammm", "ToomtHunger"}
+local helldivers = {"KAZOO32323", "xGreex", "comandrmario", "CaribbeanP", "Wolfchykofth501"}
 
 chatFunctions = {
 
@@ -25,6 +27,7 @@ functions = {
 	warp = function(commands)
 
 		local player = commands[1]
+		local 
 
 		if commands[2] == nil or commands[2] == "" then
 			chatFunctions.privateMessage({text = "Enter a warp zone.", color = "red", bold = true}, player)
@@ -46,12 +49,29 @@ functions = {
 			ToomtHunger = "right"
 
 		}
+		if helldivers.player ~= nil then
+
+			sides = {
+
+				CaribbeanP = "front",
+				comandrmario = "back",
+				KAZOO32323 = "left",
+				xGreex = "right"
+	
+			}
+
+		end
 
 		local playerSide = sides[player]
 
 		local desiredWarp = string.lower(commands[2])
 
-		local warpComputer = rednet.lookup("warp_zone", desiredWarp)
+		local warpComputer
+		if helldivers.player ~= nil then
+			warpComputer = rednet.lookup("warp_zone_helldivers", desiredWarp)
+		else
+			warpComputer = rednet.lookup("warp_zone", desiredWarp)
+		end
 
 		if warpComputer then
 			rednet.send(warpComputer, playerSide, "warp_central")
@@ -245,7 +265,7 @@ functions = {
 while true do
 
 	local event, user, message, uuid, isHidden = os.pullEvent("chat")
-	if isHidden and user == "EnchantedAlchemy" or user == "garbloni" or user == "LogHammm" or user == "ToomtHunger" then
+	if isHidden and penumbra.user ~= nil then
 
 		local commands = {}
 		
@@ -261,7 +281,24 @@ while true do
 		if functions[mainCommand] ~= nil then
 			functions[mainCommand](commands)
 		end
+
+	elseif is isHidden and helldivers.user ~= nil then
 		
+		local commands = {}
+		
+		for s in string.gmatch(message, "[%w%p:_]+") do
+			commands[#commands+1] = s
+		end
+		
+		local mainCommand = commands[1]
+		table.remove(commands,1)
+
+		table.insert(commands, 1, user)
+		
+		if functions[mainCommand] ~= nil and mainCommand == "warp" then
+			functions[mainCommand](commands)
+		end
+
 	end
 
 end
