@@ -264,7 +264,7 @@ functions = {
 while true do
 
 	local event, user, message, uuid, isHidden = os.pullEvent("chat")
-	if isHidden and penumbra.user ~= nil then
+	if isHidden and penumbra[user] ~= nil then
 
 		local commands = {}
 		
