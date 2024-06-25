@@ -7,7 +7,7 @@ local det = peripheral.find("playerDetector")
 local chatBox = peripheral.find("chatBox")
 local chatBoxName = "General"
 local penumbra = {EnchantedAlchemy = "front", garbloni = "left", LogHammm = "back", ToomtHunger = "right"}
-local helldivers = {KAZOO32323 = "right", xGreex = "left", comandrmario = "back", CaribbeanP = "front", Wolfchykofth501 = "left"}
+local helldivers = {KAZOO32323 = "right", xGreex = "left", ComandrMario = "back", CaribbeanP = "front", Wolfchykofth501 = "left"}
 
 chatFunctions = {
 
