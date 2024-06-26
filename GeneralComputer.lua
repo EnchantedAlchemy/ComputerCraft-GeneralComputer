@@ -205,6 +205,22 @@ functions = {
 
 	end,
 
+	reboot = function(commands)
+
+		local desiredReboot = string.lower(commands[2])
+
+		if desiredReboot == "general" then
+
+			os.reboot()
+
+		elseif desiredReboot == "warp" then
+
+
+		end
+
+
+	end,
+
 	help = function(commands)
 
 		local chatMessage = {}
