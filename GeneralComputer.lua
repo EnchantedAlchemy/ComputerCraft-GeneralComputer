@@ -211,6 +211,7 @@ functions = {
 
 		if desiredReboot == "general" then
 
+			chatFunctions.privateMessage({text = "Rebooting.", color = "green", bold = true, italic = false}, commands[1])
 			os.reboot()
 
 		elseif desiredReboot == "warp" then
