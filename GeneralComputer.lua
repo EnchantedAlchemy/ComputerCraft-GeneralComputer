@@ -220,6 +220,7 @@ functions = {
 			local zones = rednet.lookup("warp_zone")
 			for i,v in pairs(zones) do
 				rednet.send(v, "reboot", "warp_central")
+				chatFunctions.privateMessage({text = "Rebooting "..v..".", color = "green", bold = true, italic = false}, commands[1])
 			end
 
 		end
