@@ -216,6 +216,11 @@ functions = {
 
 		elseif desiredReboot == "warp" then
 
+			peripheral.find("modem", rednet.open)
+			local zones = rednet.lookup("warp_zone")
+			for i,v in pairs(zones) do
+				rednet.send(v, "reboot", "warp_central")
+			end
 
 		end
 
