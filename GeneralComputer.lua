@@ -1,6 +1,17 @@
---Requires:
---Chatbox
---Player Detector
+
+--[[
+Requires:
+********
+Chatbox
+Player Detector
+--]]
+
+--[[
+Optional:
+********
+Warp Zone related commands require attached modem
+--]]
+
 
 local textFunctions = require("utilities/textFunctions")
 local det = peripheral.find("playerDetector")
