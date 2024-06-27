@@ -231,6 +231,10 @@ functions = {
 			rednet.send(zone, "reboot", "warp_central")
 			chatFunctions.privateMessage({text = "Rebooting "..zone.." warp zone.", color = "green", bold = true, italic = false}, commands[1])
 
+		else
+
+			chatFunctions.privateMessage({text = "Invalid system type.", color = "red", bold = true}, commands[1])
+
 		end
 
 
