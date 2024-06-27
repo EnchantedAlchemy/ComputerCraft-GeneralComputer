@@ -69,7 +69,7 @@ functions = {
 		end
 
 		if warpComputer then
-			rednet.send(warpComputer, playerSide, "warp_central")
+			rednet.send(warpComputer, player, "warp_central")
 			chatFunctions.privateMessage({text = "Warp request sent.", color = "green", bold = true}, player)
 		else
 			chatFunctions.privateMessage({text = "Warp zone not found.", color = "red", bold = true}, player)
@@ -251,6 +251,7 @@ functions = {
 
 		end
 
+		rednet.close()
 
 	end,
 
