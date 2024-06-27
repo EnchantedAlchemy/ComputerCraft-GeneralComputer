@@ -229,7 +229,7 @@ functions = {
 			peripheral.find("modem", rednet.open)
 			local zone = rednet.lookup("warp_zone", desiredZone)
 			rednet.send(zone, "reboot", "warp_central")
-			chatFunctions.privateMessage({text = "Rebooting warp zone: "..desiredZone..".", color = "green", bold = true, italic = false}, commands[1])
+			chatFunctions.privateMessage({text = "Rebooting Warp Zone: "..desiredZone..".", color = "green", bold = true, italic = false}, commands[1])
 
 		else
 
