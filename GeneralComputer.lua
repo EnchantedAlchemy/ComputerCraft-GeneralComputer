@@ -54,7 +54,7 @@ while true do
 			printError("test")
 		else
 			--Didn't
-
+			printError("frog")
 		end
 
 	end
