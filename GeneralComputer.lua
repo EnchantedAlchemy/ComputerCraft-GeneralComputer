@@ -207,11 +207,11 @@ functions = {
 
 	reboot = function(commands)
 
-		local desiredReboot = string.lower(commands[2])
-		if desiredReboot == nil or desiredReboot == "" then
+		if commands[2] == nil or commands[2] == "" then
 			chatFunctions.privateMessage({text = "Enter a system type to reboot.", color = "red", bold = true}, commands[1])
 			return
 		end
+		local desiredReboot = string.lower(commands[2])
 
 		if desiredReboot == "general" then
 
@@ -220,12 +220,11 @@ functions = {
 
 		elseif desiredReboot == "warp" then
 
-			local desiredZone = string.lower(commands[3])
-
-			if desiredZone == nil or desiredZone == "" then
+			if commands[3] == nil or commands[3] == "" then
 				chatFunctions.privateMessage({text = "Enter a warp zone to reboot.", color = "red", bold = true}, commands[1])
 				return
 			end
+			local desiredZone = string.lower(commands[3])
 
 			peripheral.find("modem", rednet.open)
 			local zone = rednet.lookup("warp_zone", desiredZone)
