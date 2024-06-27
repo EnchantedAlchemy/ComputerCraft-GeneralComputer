@@ -218,6 +218,7 @@ functions = {
 
 			peripheral.find("modem", rednet.open)
 			local zones = rednet.lookup("warp_zone")
+			if type(zones) ~= "table" then zones = {zones} end
 			for i,v in pairs(zones) do
 				rednet.send(v, "reboot", "warp_central")
 				chatFunctions.privateMessage({text = "Rebooting "..v..".", color = "green", bold = true, italic = false}, commands[1])
