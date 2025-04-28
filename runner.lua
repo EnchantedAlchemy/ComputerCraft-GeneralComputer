@@ -12,7 +12,7 @@ Warp Zone related commands require attached modem
 --]]
 
 
-local textFunctions = require("utilities/textFunctions")
+local textFunctions = require("../utilities/textFunctions")
 local det = peripheral.find("playerDetector")
 local chatBox = peripheral.find("chatBox")
 local chatBoxName = "General"
